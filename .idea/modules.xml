@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidStudioProjects-MovieDirectory.iml" filepath="$PROJECT_DIR$/AndroidStudioProjects-MovieDirectory.iml" group="MovieDirectory" />
+      <module fileurl="file://$PROJECT_DIR$/app/AndroidStudioProjects-MovieDirectory-app.iml" filepath="$PROJECT_DIR$/app/AndroidStudioProjects-MovieDirectory-app.iml" group="MovieDirectory/app" />
       <module fileurl="file://$PROJECT_DIR$/MovieDirectory.iml" filepath="$PROJECT_DIR$/MovieDirectory.iml" group="MovieDirectory" />
       <module fileurl="file://$PROJECT_DIR$/app/MovieDirectory-app.iml" filepath="$PROJECT_DIR$/app/MovieDirectory-app.iml" group="MovieDirectory/app" />
       <module fileurl="file://$PROJECT_DIR$/StudioProjects-MovieDirectory.iml" filepath="$PROJECT_DIR$/StudioProjects-MovieDirectory.iml" group="MovieDirectory" />

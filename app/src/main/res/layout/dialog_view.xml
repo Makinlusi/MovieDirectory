@@ -24,11 +24,12 @@
 
             <EditText
                 android:id="@+id/searchEdt"
-                android:layout_below="@id/titleText"
-                android:textStyle="italic"
-                android:hint="@string/search_hint"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleText"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:textStyle="italic" />
 
             <Button
                 android:id="@+id/submitButton"

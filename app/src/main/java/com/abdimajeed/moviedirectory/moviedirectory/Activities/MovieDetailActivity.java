@@ -55,9 +55,8 @@ public class MovieDetailActivity extends AppCompatActivity {
     }
 
     private void getMovieDetails(String id) {
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                Constants.URL + id+Constants.API_KEY, new Response.Listener<JSONObject>() {
+                Constants.URL + id + Constants.API_KEY, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try{
@@ -71,10 +70,10 @@ public class MovieDetailActivity extends AppCompatActivity {
                             JSONObject mRatings = ratings.getJSONObject(ratings.length() - 1);
                             source = mRatings.getString("Source");
                             value = mRatings.getString("Value");
-                            rating.setText(source + " : " + value);
+                            rating.setText(source + getResources().getString(R.string.colon) + value);
 
                         }else {
-                            rating.setText("Ratings: N/A");
+                            rating.setText(getResources().getString(R.string.Ratings_NA));
                         }
 
                         movieTitle.setText(response.getString("Title"));

@@ -158,26 +158,20 @@ public class MainActivity extends AppCompatActivity {
                 Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT + Constants.API_KEY, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
-                try{
+                try {
                     JSONArray moviesArray = response.getJSONArray("Search");
-
                     for (int i = 0; i < moviesArray.length(); i++) {
-
                         JSONObject movieObj = moviesArray.getJSONObject(i);
-
-                        Movie movie = new Movie();
-                        movie.setTitle(movieObj.getString("Title"));
-                        movie.setYear("Year Released: " + movieObj.getString("Year"));
-                        movie.setMovieType("Type: " + movieObj.getString("Type"));
-                        movie.setPoster(movieObj.getString("Poster"));
-                        movie.setImdbId(movieObj.getString("imdbID"));
-
-
-                        // Log.d("Movies: ", movie.getTitle());
-                        movieList.add(movie);
-
-
+                        if(movieObj.getString("Type").equalsIgnoreCase("movie")) {
+                            Movie movie = new Movie();
+                            movie.setTitle(movieObj.getString("Title"));
+                            movie.setYear("Year Released: " + movieObj.getString("Year"));
+                            movie.setMovieType("Type: " + movieObj.getString("Type"));
+                            movie.setPoster(movieObj.getString("Poster"));
+                            movie.setImdbId(movieObj.getString("imdbID"));
+                            // Log.d("Movies: ", movie.getTitle());
+                            movieList.add(movie);
+                        }
                     }
                     /**
                      * Very important!! Otherwise, we wont see anything being displayed.
@@ -185,7 +179,7 @@ public class MainActivity extends AppCompatActivity {
                     movieRecyclerViewAdapter.notifyDataSetChanged();//Important!!
 
 
-                }catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
 
@@ -199,7 +193,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         queue.add(jsonObjectRequest);
-
         return movieList;
 
     }
