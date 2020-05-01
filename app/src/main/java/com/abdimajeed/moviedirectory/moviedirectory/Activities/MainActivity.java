@@ -165,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                             Movie movie = new Movie();
                             movie.setTitle(movieObj.getString("Title"));
                             movie.setYear("Year Released: " + movieObj.getString("Year"));
-                            movie.setMovieType("Type: " + movieObj.getString("Type"));
+                            movie.setMovieType("Type: " + movieObj.getString("Type").substring(0, 1).toUpperCase() + movieObj.getString("Type").substring(1));
                             movie.setPoster(movieObj.getString("Poster"));
                             movie.setImdbId(movieObj.getString("imdbID"));
                             // Log.d("Movies: ", movie.getTitle());
