@@ -153,14 +153,15 @@ public class MainActivity extends AppCompatActivity {
         movieList.clear();
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
-                Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT + Constants.API_KEY, new Response.Listener<JSONObject>() {
+                Constants.URL_LEFT + searchTerm + Constants.URL_RIGHT + Constants.API_KEY,
+                new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 try {
                     JSONArray moviesArray = response.getJSONArray("Search");
                     for (int i = 0; i < moviesArray.length(); i++) {
                         JSONObject movieObj = moviesArray.getJSONObject(i);
-                        if(movieObj.getString("Type").equalsIgnoreCase("movie")) {
+                        if (movieObj.getString("Type").equalsIgnoreCase("movie")) {
                             Movie movie = new Movie();
                             movie.setTitle(movieObj.getString("Title"));
                             movie.setYear("Year Released: " + movieObj.getString("Year"));
